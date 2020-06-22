@@ -2,7 +2,7 @@
     "name": "avency/neos-etracker",
     "description": "Neos etracker package",
     "type": "neos-plugin",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "license": "MIT",
     "require": {
         "neos/neos": "*"
