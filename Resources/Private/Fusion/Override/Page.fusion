@@ -1,0 +1,25 @@
+prototype(Neos.Neos:Page) {
+    etracker = Neos.Fusion:Component {
+        key = ${!String.isBlank(q(site).property('etrackerKey')) ? q(site).property('etrackerKey') : Configuration.setting('Avency.Neos.Etracker.key')}
+        siteArea = ${!String.isBlank(q(site).property('etrackerSiteArea')) ? q(site).property('etrackerSiteArea') : Configuration.setting('Avency.Neos.Etracker.siteArea')}
+
+        renderer = Avency.Neos.Etracker:Component.Atom.EtrackerCode {
+            pageName = ${q(documentNode).property('title')}
+            key = ${props.key}
+            blockCookies = ${Configuration.setting('Avency.Neos.Etracker.blockCookies')}
+            url = Neos.Neos:NodeUri {
+                absolute = true
+                node = ${documentNode}
+            }
+            areas = Neos.Neos:NodeUri {
+                node = ${documentNode}
+                @process.removeHtmlPostfix = ${String.replace(value, '.html', '')}
+                @process.trim = ${String.trim(value, '/')}
+                @process.addSiteArea = ${props.siteArea + (value ? '/' + value : '')}
+                @process.addSiteArea.@if.notEmpty = ${!String.isBlank(props.siteArea)}
+            }
+        }
+        @if.enable = ${!String.isBlank(this.key)}
+        @position = 'before closingHeadTag'
+    }
+}

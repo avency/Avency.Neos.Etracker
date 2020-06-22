@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="" product-name="Avency.Neos.Etracker" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="properties.etrackerKey" xml:space="preserve" approved="yes">
+                <source>Etracker Key</source>
+            </trans-unit>
+            <trans-unit id="properties.etrackerSiteArea" xml:space="preserve" approved="yes">
+                <source>Etracker SiteArea</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
