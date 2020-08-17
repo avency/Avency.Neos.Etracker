@@ -17,7 +17,7 @@ prototype(Avency.Neos.Etracker:Component.Atom.EtrackerCode) < prototype(Neos.Fus
             var et_areas = "{props.areas}";
             var et_url = "{props.url}";
         </script>
-        <script id="_etLoader" type="text/javascript" charset="UTF-8" data-block-cookies={props.blockCookies ? 'true' : false} data-respect-dnt="true" data-secure-code="N8KMQb" src="//static.etracker.com/code/e.js"></script>
+        <script id="_etLoader" type="text/javascript" charset="UTF-8" data-block-cookies={props.blockCookies ? 'true' : false} data-respect-dnt="true" data-secure-code={props.key} src="//static.etracker.com/code/e.js"></script>
         <!-- etracker tracklet 5.0 end -->
     `
 }
