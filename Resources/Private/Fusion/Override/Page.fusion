@@ -3,6 +3,11 @@ prototype(Neos.Neos:Page) {
         key = ${!String.isBlank(q(site).property('etrackerKey')) ? q(site).property('etrackerKey') : Configuration.setting('Avency.Neos.Etracker.key')}
         siteArea = ${!String.isBlank(q(site).property('etrackerSiteArea')) ? q(site).property('etrackerSiteArea') : Configuration.setting('Avency.Neos.Etracker.siteArea')}
 
+        siteUrl = Neos.Neos:NodeUri {
+            absolute = true
+            node = ${site}
+        }
+
         renderer = Avency.Neos.Etracker:Component.Atom.EtrackerCode {
             pageName = ${q(documentNode).property('title')}
             key = ${props.key}
@@ -13,6 +18,7 @@ prototype(Neos.Neos:Page) {
             }
             areas = Neos.Neos:NodeUri {
                 node = ${documentNode}
+                @process.removeSiteUrl = ${String.replace(value, props.siteUrl, '')}
                 @process.removeHtmlPostfix = ${String.replace(value, '.html', '')}
                 @process.trim = ${String.trim(value, '/')}
                 @process.addSiteArea = ${props.siteArea + (value ? '/' + value : '')}
