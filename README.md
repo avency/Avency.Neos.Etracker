@@ -3,7 +3,8 @@
 > Adds the etracker code in the html header.
 
 ## Authors & Sponsors
-Michael Gerdemann - michael.gerdemann@avency.de
+Michael Gerdemann - michael.gerdemann@avency.de<br>
+Enes Erk - enes.erk@avency.de
 
 The development and the public-releases of this package is generously sponsored by our employer https://www.avency.de.
 
@@ -42,6 +43,19 @@ Avency:
     Etracker:
       blockCookies: false
 ```
+
+[Documentation (German)](https://www.etracker.com/docs/integration-setup/einstellungen-accounts/etracker-cookies/etracker-cookies-aktivieren/#anleitung)
+
+### Set cookie lifetime
+
+```
+Avency:
+  Neos:
+    Etracker:
+      cookieLifeTime: 24 # Amount of Months
+```
+
+[Documentation (German)](https://www.etracker.com/docs/integration-setup/einstellungen-accounts/etracker-cookies/laufzeit-von-etracker-cookies-selbst-bestimmen/)
 
 ## License
 
