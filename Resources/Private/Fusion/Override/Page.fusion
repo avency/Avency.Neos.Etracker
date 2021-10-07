@@ -12,6 +12,7 @@ prototype(Neos.Neos:Page) {
             pageName = ${q(documentNode).property('title')}
             key = ${props.key}
             blockCookies = ${Configuration.setting('Avency.Neos.Etracker.blockCookies')}
+            cookieLifeTime = ${Configuration.setting('Avency.Neos.Etracker.cookieLifeTime')}
             url = Neos.Neos:NodeUri {
                 absolute = true
                 node = ${documentNode}

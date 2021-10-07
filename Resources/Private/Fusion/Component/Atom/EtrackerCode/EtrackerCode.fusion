@@ -5,10 +5,11 @@ prototype(Avency.Neos.Etracker:Component.Atom.EtrackerCode) < prototype(Neos.Fus
     areas = ''
     url = ''
     blockCookies = true
+    cookieLifeTime = null
 
     // Rendering
     renderer = afx`
-        <!-- Copyright (c) 2000-2020 etracker GmbH. All rights reserved. -->
+        <!-- Copyright (c) 2000-2021 etracker GmbH. All rights reserved. -->
         <!-- This material may not be reproduced, displayed, modified or distributed -->
         <!-- without the express prior written permission of the copyright holder. -->
         <!-- etracker tracklet 5.0 -->
@@ -17,7 +18,16 @@ prototype(Avency.Neos.Etracker:Component.Atom.EtrackerCode) < prototype(Neos.Fus
             var et_areas = "{props.areas}";
             var et_url = "{props.url}";
         </script>
-        <script id="_etLoader" type="text/javascript" charset="UTF-8" data-block-cookies={props.blockCookies ? 'true' : false} data-respect-dnt="true" data-secure-code={props.key} src="//static.etracker.com/code/e.js"></script>
+        <script id="_etLoader"
+                type="text/javascript"
+                charset="UTF-8"
+                data-block-cookies={props.blockCookies ? 'true' : false}
+                data-respect-dnt="true"
+                data-cookie-lifetime={props.cookieLifeTime ? props.cookieLifeTime : false}
+                data-secure-code={props.key}
+                src="//code.etracker.com/code/e.js"
+                async
+        ></script>
         <!-- etracker tracklet 5.0 end -->
     `
 }

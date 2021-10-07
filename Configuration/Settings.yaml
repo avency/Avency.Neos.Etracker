@@ -2,6 +2,7 @@ Avency:
   Neos:
     Etracker:
       blockCookies: true
+      cookieLifeTime: null
 Neos:
   Neos:
     fusion:
